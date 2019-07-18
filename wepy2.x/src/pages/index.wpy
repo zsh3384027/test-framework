@@ -1,0 +1,85 @@
+<style lang="less">
+  .uni-list {
+    background-color: #eee;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+<template>
+  <div>
+    <div class="uni-list">
+      <div
+        class="uni-list-cell"
+        hover-class="uni-list-cell-hover"
+        v-for="(list,key) in listData" :key="key"
+      >
+        <card
+          :item.sync="list"
+          :key.sync="key"
+          @trigger.user="trigger"
+        ></card>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  import Api from '@/utils/api.js';
+
+  wepy.page({
+    config: {
+      navigationBarTitleText: 'test'
+    },
+
+    hooks: {
+     
+    },
+
+    mixins: [],
+
+    data: {
+      listData: []
+    },
+
+    computed: {
+     
+    },
+
+    methods: {
+      trigger(key) {
+        this.$wx.$perf && this.$wx.$perf.mark('setData',this,[key]);
+        this.listData[key].active = !this.listData[key].active;
+      }
+    },
+
+    onPullDownRefresh() {
+      this.listData = Api.getNews();
+      setTimeout(() => {
+        wx.stopPullDownRefresh();
+      }, 1000);
+    },
+
+    onReachBottom() {
+      this.$wx.$perf && this.$wx.$perf.mark('setData')
+      this.listData.push(...Api.getNews());
+    },
+
+    created () {
+      this.$wx.$perf && this.$wx.$perf.mark('setData')
+      this.listData = Api.getNews();
+    }
+  });
+</script>
+<config>
+{
+  navigationBarTitleText: '仿微博 - wepy版',
+  enablePullDownRefresh: true,
+  backgroundTextStyle: 'dark',
+  usingComponents: {
+    card: '../components/card',
+  }
+}
+</config>

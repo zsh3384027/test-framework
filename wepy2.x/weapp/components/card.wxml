@@ -1,0 +1,31 @@
+
+<view class="uni-media-list">
+  <view class="uni-media_header-box">
+    <view class="uni-media_header">
+      <image src="{{item.cover}}" mode="aspectFill"></image>
+    </view>
+    <view class="uni-media_header-info">
+      <view class="uni-media_info-name">{{item.author_name}}</view>
+      <view>{{item.published_at}} {{item.form}}</view>
+    </view>
+    <view class="uni-media_header-right">
+      
+    </view>
+  </view>
+  <view class="uni-media_content-box">
+    <view class="uni-media_content-text">{{item.content}}</view>
+    <view class="uni-media_content-iamges">
+      <view wx:for="{{item.imgs}}" wx:for-item="imgs" wx:for-index="index" wx:key="index" class="uni-media_content-img {{item.imgs.length === 1?active:''}}">
+        <view class="uni-media_content-img-item">
+          <image src="{{imgs}}" mode="aspectFill"></image>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view class="uni-media_groups">
+    <view class="uni-media_groups-item"><text class="iconfont icon-fenxiang-copy"></text><text>{{item.share}}万</text></view>
+    <view class="uni-media_groups-item"><text class="iconfont icon-pinglun"></text><text>{{item.comment}}万</text></view>
+    <view data-wpy-evt="11-0" bindtap="_proxy" class="uni-media_groups-item"><text class="iconfont icon-dianzan1 {{item.active?'active':''}}"></text><text>{{item.thumbs}}万</text></view>
+  </view>
+</view>

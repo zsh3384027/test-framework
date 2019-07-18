@@ -1,0 +1,8 @@
+
+<view>
+  <view class="uni-list">
+    <view hover-class="uni-list-cell-hover" wx:for="{{ listData }}" wx:for-index="key" wx:for-item="list" wx:key="key" key="{{ key }}" class="uni-list-cell">
+      <card bind_init="_initComponent" item="{{ list }}" key="{{ key }}" data-wpy-evt="9-0" bindtrigger="_proxy"></card>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "仿微博 - wepy版",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "component": true,
+    "usingComponents": {
+        "card": "../components/card"
+    }
+}
