@@ -1,14 +1,13 @@
 {
-  "pages": [
-    "pages/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "仿微博 - wepy版",
-    "navigationBarTextStyle": "black"
-  },
-  "component": true,
-  "usingComponents": {},
-  "sitemapLocation": "sitemap22.json"
+    "pages": [
+        "pages/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "仿微博 - wepy版",
+        "navigationBarTextStyle": "black"
+    },
+    "component": true,
+    "usingComponents": {}
 }

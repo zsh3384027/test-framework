@@ -9,8 +9,10 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "wx9dcdaed5b2bc94ad",
+	"appid": "wx37e455defc90aeb5",
 	"projectname": "mpvue",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
