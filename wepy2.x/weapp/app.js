@@ -1,10 +1,10 @@
 "use strict";
 
-var _core = _interopRequireDefault(require('vendor.js')(1));
+var _core = _interopRequireDefault(require('vendor.js')(0));
 
 var _eventHub = _interopRequireDefault(require('common/eventHub.js'));
 
-var _x = _interopRequireDefault(require('vendor.js')(0));
+var _x = _interopRequireDefault(require('vendor.js')(1));
 
 require('utils/perf.js');
 

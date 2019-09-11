@@ -34,59 +34,6 @@ var global = {};
    return __wepy_require;
 })([
 /***** module 0 start *****/
-/***** /Users/zhangshaohua/Workspace/GitHub/test-framework/wepy2.x/node_modules/@wepy/x/dist/index.js *****/
-function(module, exports, __wepy_require) {'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var vuex = __wepy_require(2);
-
-function wepyInstall (wepy) {
-  vuex.install(wepy);
-
-  wepy.mixin({
-    created: function () {
-      var this$1 = this;
-
-      var computed = this.$options.computed;
-      var loop = function ( k ) {
-        if (computed[k].vuex) {
-          this$1.$watch(k, function () {
-            this._computedWatchers[k].evaluate();
-          }, { deep: true });
-        }
-      };
-
-      for (var k in computed) loop( k );
-    }
-  });
-}
-
-var index = {
-  Store: vuex.Store,
-  install: wepyInstall,
-  version: vuex.version,
-  mapState: vuex.mapState,
-  mapMutations: vuex.mapMutations,
-  mapGetters: vuex.mapGetters,
-  mapActions: vuex.mapActions,
-  createNamespacedHelpers: vuex.createNamespacedHelpers
-};
-
-exports.Store = vuex.Store;
-exports.version = vuex.version;
-exports.mapState = vuex.mapState;
-exports.mapMutations = vuex.mapMutations;
-exports.mapGetters = vuex.mapGetters;
-exports.mapActions = vuex.mapActions;
-exports.createNamespacedHelpers = vuex.createNamespacedHelpers;
-exports.default = index;
-exports.install = wepyInstall;
-
-},/***** module 0 end *****/
-
-
-/***** module 1 start *****/
 /***** /Users/zhangshaohua/Workspace/GitHub/test-framework/wepy2.x/node_modules/@wepy/core/dist/wepy.js *****/
 function(module, exports, __wepy_require) {'use strict';
 
@@ -2535,6 +2482,59 @@ Object.assign(wepy, {
 });
 
 module.exports = wepy;
+
+},/***** module 0 end *****/
+
+
+/***** module 1 start *****/
+/***** /Users/zhangshaohua/Workspace/GitHub/test-framework/wepy2.x/node_modules/@wepy/x/dist/index.js *****/
+function(module, exports, __wepy_require) {'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var vuex = __wepy_require(2);
+
+function wepyInstall (wepy) {
+  vuex.install(wepy);
+
+  wepy.mixin({
+    created: function () {
+      var this$1 = this;
+
+      var computed = this.$options.computed;
+      var loop = function ( k ) {
+        if (computed[k].vuex) {
+          this$1.$watch(k, function () {
+            this._computedWatchers[k].evaluate();
+          }, { deep: true });
+        }
+      };
+
+      for (var k in computed) loop( k );
+    }
+  });
+}
+
+var index = {
+  Store: vuex.Store,
+  install: wepyInstall,
+  version: vuex.version,
+  mapState: vuex.mapState,
+  mapMutations: vuex.mapMutations,
+  mapGetters: vuex.mapGetters,
+  mapActions: vuex.mapActions,
+  createNamespacedHelpers: vuex.createNamespacedHelpers
+};
+
+exports.Store = vuex.Store;
+exports.version = vuex.version;
+exports.mapState = vuex.mapState;
+exports.mapMutations = vuex.mapMutations;
+exports.mapGetters = vuex.mapGetters;
+exports.mapActions = vuex.mapActions;
+exports.createNamespacedHelpers = vuex.createNamespacedHelpers;
+exports.default = index;
+exports.install = wepyInstall;
 
 },/***** module 1 end *****/
 
